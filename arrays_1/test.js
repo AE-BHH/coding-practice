@@ -1,41 +1,63 @@
 const { prob1, prob2, prob3, prob4, prob5, prob6 } = require('./problems');
 
-const car = {
-    color: 'green',
-    'all wheel drive': false,
-    year: 1989,
-    make: 'Honda',
-    specialFeatures: ['radio', 'A/C', 'electric locking'],
-    maxSpeed: 75
-}
-
 test('prob 1', () => {
-    const input = {...car};
-    expect(prob1(input)).toBe('green');
+    const input = [5, 8, 10, 12, 0, -8];
+    expect(prob1(input)).toEqual(input.reverse());
 })
 
 test('prob 2', () => {
-    const input = {...car};
-    expect(prob2(input)).toBe(false);
+    const input = [5, 8, 'hi', 10, 12,'keep me', 0, -8, 40];
+    const output = [5, 8, 'hi', 10,'keep me', 0, -8];
+    expect(prob2(input)).toEqual(output);
 })
 
 test('prob 3', () => {
-    const input = {...car};
-    expect(prob3(input).color).toBe('pink');
+    const input = [
+        ['a', 'hello', 'thissentanceislong', '', 'bringit'],
+        ['fire'],
+        ['I', 'ilikeit'],
+        ['hi','it', 'is', 'hot']
+    ];
+    const output = [
+        ['hello', 'bringit'],
+        ['fire'],
+        ['ilikeit'],
+        ['hot']
+    ]
+    expect(prob3(input)).toEqual(output);
 })
 
 test('prob 4', () => {
-    const input = {...car};
-    expect(prob4(input)['all wheel drive']).toBe(true);
+    const input = [
+        ['a', 'hello', 'long', '', 'bringit'],
+        ['fire'],
+        ['ilikeit', 'butitsreallytoohot'],
+        ['hi','it', 'is', 'hot']
+    ];
+    const output = [
+        ['fire']
+    ]
+    expect(prob4(input)).toEqual(output);
 })
 
 test('prob 5', () => {
-    const input = {...car};
-    expect(prob5(input, 5).seats).toBe(5);
+    const input = [
+        [1, 4, 10, 50, -3], 
+        [3],
+        [1, 29],
+        [8, 9, 10, 11]
+    ];
+    const output = [
+        [1, 4, 10, 62, -3], 
+        [3],
+        [1, 30],
+        [8, 9, 10, 38]
+    ];
+    expect(prob5(input)).toEqual(output);
 })
 
 test('prob 6', () => {
-    const input = {...car};
-
-    expect(prob6(input, 'model', 'CR-V').model).toBe('CR-V');
+    const input = [1, 4, 6, 2, 2, 2, 3];
+    const output = [1, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 2, 2, 3, 3, 3];
+    expect(prob6(input)).toEqual(output);
 })

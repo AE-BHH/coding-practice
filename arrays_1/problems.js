@@ -1,31 +1,31 @@
-// 1. Reverse the arr and reurn the result
+// 1. Reverse the arr and return the result
 const prob1 = (arr) => {
     return arr.reverse();
 }
 
-// 2. Filter out all mnumbers from the array which are greater than 10. Keep any strings. Return the resultt
+// 2. Filter out all mnumbers from the array which are greater than 10. Keep any strings. Return the result
 const prob2 = (arr) => {
-    return arr.filer(el => {
-        return typeof(el) === 'string' || el < 10;
+    return arr.filter(el => {
+        return typeof(el) === 'string' || el <= 10;
     });
 }
 
-// 3. Filter out all elements from the subarrays of arr whose length is longer than 9 or shorter than  2. 
+// 3. Filter out all elements from the subarrays of arr whose length is longer than 9 or shorter than  3. 
 // Keep the subarray structure - just remove elements from subarrays where necessary
 const prob3 = (arr) => {
     return arr.map(subArr => {
-        return subArr.filer(el => {
-            return el.length >= 2 && el.length <= 9
+        return subArr.filter(el => {
+            return el.length >= 3 && el.length <= 9
         });
     });
 }
 
-// 4. Filter out any subarray from arr that has at one least element whose length is longer than 9 or shorter than  2.
+// 4. Filter out any subarray from arr that has at one least element whose length is longer than 9 or shorter than  3.
 // Unlike #3, here you are changing the subarray structure.
 const prob4 = (arr) => {
-    return arr.filer(subArr => {
+    return arr.filter(subArr => {
         return subArr.reduce((prev, curr) => {
-            if (curr.length < 2 || curr.length > 9) {
+            if (curr.length < 3 || curr.length > 9) {
                 prev = false;
             }
             return prev;
@@ -43,8 +43,8 @@ const prob5 = (arr) => {
         let sum = 0;
         subArry.forEach((num, i) => {
             sum += num;
-            if (subArry[maxIndex] < subArry[i]) {
-                max = i;
+            if (subArry[maxIndex] < num) {
+                maxIndex = i;
             }
         });
         subArry[maxIndex] = sum;
