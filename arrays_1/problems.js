@@ -1,17 +1,17 @@
-// 1. Reverse the arr and return the result
+// 1. Reverse arr and return the result
 const prob1 = (arr) => {
     return arr.reverse();
 }
 
-// 2. Filter out all mnumbers from the array which are greater than 10. Keep any strings. Return the result
+// 2. Filter out all numbers from the array which are greater than 10. Keep any strings. Return the result
 const prob2 = (arr) => {
     return arr.filter(el => {
         return typeof(el) === 'string' || el <= 10;
     });
 }
 
-// 3. Filter out all elements from the subarrays of arr whose length is longer than 9 or shorter than  3. 
-// Keep the subarray structure - just remove elements from subarrays where necessary
+// 3. Filter out all elements from the subarrays in arr whose length is longer than 9 or shorter than  3. 
+// Keep the arr structure - just remove elements from subarrays which are too long or too short
 const prob3 = (arr) => {
     return arr.map(subArr => {
         return subArr.filter(el => {
@@ -20,8 +20,8 @@ const prob3 = (arr) => {
     });
 }
 
-// 4. Filter out any subarray from arr that has at one least element whose length is longer than 9 or shorter than  3.
-// Unlike #3, here you are changing the subarray structure.
+// 4. Filter out any subarray in arr that has at least one least element whose length is longer than 9 or shorter than 3.
+// Unlike #3, here you are changing the arr structure by removing the entire subArray if it has an element that is too long or too short
 const prob4 = (arr) => {
     return arr.filter(subArr => {
         return subArr.reduce((prev, curr) => {
@@ -33,7 +33,7 @@ const prob4 = (arr) => {
     });
 }
 
-// 5. Traverse arr. Each subarray is comprised of numbers. Find the sum and max of each  subarray.
+// 5. Traverse arr. Each subarray is comprised of elements which are numbers. In each subArary, find the sum of all the numbers as well as the max.
 // Replace the max number in each subarry with the sum.
 // Keep everything else the same
 // Return the result

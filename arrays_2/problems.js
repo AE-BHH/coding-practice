@@ -1,4 +1,4 @@
-// 1. Return a new object with two key value pairs, called 'allKeys' and 'allValues'.
+// 1. Return a new object with two key value pairs: 'allKeys' and 'allValues'.
 // allKeys should contain an array of all the key names in obj
 // allValue should contain an array of all the values in obj
 const prob1 = (obj) => {
@@ -18,7 +18,7 @@ const prob2 = (arr, obj) => {
 }
 
 // 3. Return a new object containg all the key value pairs from obj1 and obj2
-// If any keys betyween the objects are the same, use the higher of the two values associated with the same keys
+// If any keys betyween the objects are the same, use the higher of the two values associated with the same key
 const prob3 = (obj1, obj2) => {
     return Object.keys(obj1).reduce((prev, curr) => {
         if (prev.hasOwnProperty(curr)) {
